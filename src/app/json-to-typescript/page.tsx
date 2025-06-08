@@ -50,7 +50,7 @@ const JSONToTypescriptPage = () => {
     try {
       setTsCode(JSONToTs(JSON.parse(jsonText)).join("\n"));
     } catch (error) {
-      message.error("Invalid JSON");
+      // message.error("Invalid JSON");
       console.log(error);
     }
   }, [jsonText]);
