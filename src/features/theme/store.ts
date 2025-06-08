@@ -7,10 +7,17 @@ export interface ThemeStore {
   setTheme: (theme: ThemeOption) => void;
 }
 
+const getSystemTheme = (): ThemeOption => {
+  if (typeof window === "undefined") return "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
 export const useThemeStore = create(
   persist<ThemeStore>(
     set => ({
-      theme: "light",
+      theme: getSystemTheme(),
       setTheme: theme => set({ theme }),
     }),
     {
