@@ -1,0 +1,70 @@
+@import "tailwindcss" important;
+
+@import "../assets/colorscheme.css";
+@import "../assets/editor.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: "Ubuntu Mono", monospace;
+  --font-display: "Climate Crisis", cursive;
+  --font-body: "Geist", sans-serif;
+
+  --color-solarized-base03: var(--color-base03);
+  --color-solarized-base02: var(--color-base02);
+  --color-solarized-base01: var(--color-base01);
+  --color-solarized-base00: var(--color-base00);
+  --color-solarized-base0: var(--color-base0);
+  --color-solarized-base1: var(--color-base1);
+  --color-solarized-base2: var(--color-base2);
+  --color-solarized-base3: var(--color-base3);
+  --color-solarized-yellow: var(--color-yellow);
+  --color-solarized-orange: var(--color-orange);
+  --color-solarized-red: var(--color-red);
+  --color-solarized-magenta: var(--color-magenta);
+  --color-solarized-violet: var(--color-violet);
+  --color-solarized-blue: var(--color-blue);
+  --color-solarized-cyan: var(--color-cyan);
+  --color-solarized-green: var(--color-green);
+
+  --color-background: var(--color-background);
+}
+
+@layer base {
+  :root {
+    --color-background: var(--color-base3);
+  }
+
+  .dark {
+    --color-background: var(--color-base03);
+  }
+
+  html,
+  body,
+  #root,
+  main {
+    @apply h-full overflow-hidden;
+  }
+}
+
+@utility text-primary-gradient {
+  display: inline-block;
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    theme(color-solarized-blue) 0%,
+    theme(color-solarized-violet) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility maximized {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+}
