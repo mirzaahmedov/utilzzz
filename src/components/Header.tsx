@@ -11,7 +11,7 @@ export const Header = () => {
     <header className="border-b border-solarized-base2 dark:border-solarized-base02 p-4 flex items-center gap-10 bg-solarized-base3 dark:bg-solarized-base03">
       <Typography.Title
         level={4}
-        className="font-normal font-display italic text-primary-gradient mb-0"
+        className="font-normal font-display text-primary-gradient mb-0"
       >
         UTILZZZ.
       </Typography.Title>

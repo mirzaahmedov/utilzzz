@@ -1,5 +1,5 @@
 import "./index.css";
-import '@ant-design/v5-patch-for-react-19';
+import "@ant-design/v5-patch-for-react-19";
 
 import { App as AntdApp, ConfigProvider, theme as antdTheme } from "antd";
 
